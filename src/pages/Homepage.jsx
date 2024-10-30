@@ -3,34 +3,48 @@ import React from "react";
 import LeftNavigationBar from "../components/LeftNavigationBar";
 import TableContent from "../components/TableComponent";
 import { useLayout } from "../context/LayoutContext";
+import { useTransition } from "react";
+import { useState } from "react";
+import { useTranslation } from "react-i18next";
+import { useEffect } from "react";
 
 export default function Homepage() {
-  const { direction, toggleDirection } = useLayout();
+  const { direction, toggleLanguage } = useLayout();
+
   return (
     <div>
       <div className="flex flex-row justify-end mr-20">
         <Button
           className="text-lg text-black"
-          onClick={() => toggleDirection("English")}
+          onClick={() => toggleLanguage("English")}
         >
           English
         </Button>
         <Button
           className="text-lg text-black"
-          onClick={() => toggleDirection("Arabic")}
+          onClick={() => toggleLanguage("Arabic")}
         >
           اَلْعَرَبِيَّةُ
         </Button>
       </div>
 
-      {/* Content area with Left Navigation and Table */}
       <div
+        dir={direction}
         className={`flex flex-row gap-20 mt-16 ml-4 ${
-          direction === "rtl" ? "flex-row-reverse" : ""
+          direction === "rtl" ? "flex-row-reverse justify-end" : "justify-start"
         }`}
       >
-        <LeftNavigationBar />
-        <TableContent />
+        {direction === "ltr" ? (
+          <>
+            <LeftNavigationBar />
+            <TableContent />
+          </>
+        ) : (
+          <>
+            <TableContent />
+            <LeftNavigationBar />
+          </>
+        )}
       </div>
     </div>
   );

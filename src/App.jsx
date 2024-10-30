@@ -5,6 +5,7 @@ import Dashboard from "./pages/Dashboard";
 import { Route } from "react-router-dom";
 import Homepage from "./pages/Homepage";
 import { LayoutProvider } from "./context/LayoutContext";
+import "./i18n";
 
 function App() {
   return (

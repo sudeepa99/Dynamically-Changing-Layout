@@ -1,0 +1,17 @@
+{
+  "product1": "Running Shoes",
+  "product2": "Leather Boots",
+  "product3": "Sandals",
+  "product4": "Sneakers",
+  "product5": "Formal Shoes",
+  "description1": "Comfortable and lightweight running shoes.",
+  "description2": "Durable leather boots for all terrains.",
+  "description3": "Breathable sandals, perfect for summer.",
+  "description4": "Stylish sneakers for everyday use.",
+  "description5": "Elegant formal shoes for business attire.",
+  "price1": "$50",
+  "price2": "$120",
+  "price3": "$35",
+  "price4": "$75",
+  "price5": "$100"
+}
